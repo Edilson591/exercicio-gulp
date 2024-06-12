@@ -1,0 +1,55 @@
+@use 'config/reset.scss';
+@use 'config/variaveis.scss';
+
+body {
+    background-color: variaveis.$cordeDeFundo;
+}
+
+header {
+    position: sticky;
+    background-color: variaveis.$corHeader;
+    top: 0;
+    left: 0;
+    
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        margin: 0 auto;
+        width: 80%;
+
+        .menu ul{
+            display: flex;
+            gap: 1rem;
+
+            a{
+                text-decoration: none;
+                color: variaveis.$corFontePrincipal;
+            }
+        }
+    }
+}
+
+section {
+    padding: 50px 0;
+
+    .container {
+        .imagens {
+            display: grid;
+            grid-template-columns: repeat(2, 48.5%);
+            column-gap: 3%;
+            .imagens-random {
+                max-width: 500px;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+li {
+    list-style: none;
+}
