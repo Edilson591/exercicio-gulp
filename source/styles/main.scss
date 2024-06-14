@@ -1,5 +1,10 @@
 @use 'config/reset.scss';
 @use 'config/variaveis.scss';
+@mixin elementoContainer() {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+}
 
 body {
     background-color: variaveis.$cordeDeFundo;
@@ -11,15 +16,12 @@ header {
     top: 0;
     left: 0;
     
-
     .container {
-        display: flex;
+        @include elementoContainer();
         justify-content: space-between;
         align-items: center;
         padding: 1rem 0;
-        margin: 0 auto;
-        width: 80%;
-
+    }
         .menu ul{
             display: flex;
             gap: 1rem;
@@ -30,18 +32,26 @@ header {
             }
         }
     }
-}
+
 
 section {
     padding: 50px 0;
 
     .container {
+        @include elementoContainer();
+        flex-direction: column;
+        h2 {
+            padding: 1rem 0;
+        }
         .imagens {
             display: grid;
-            grid-template-columns: repeat(2, 48.5%);
-            column-gap: 3%;
+            grid-template-columns: repeat(3, 32.8%);
+            gap: 1rem;
+            transition: all .5s;
             .imagens-random {
-                max-width: 500px;
+                max-height:300px;
+                overflow-y: hidden;
+                
                 img {
                     width: 100%;
                 }
@@ -50,6 +60,35 @@ section {
     }
 }
 
+.hoverImg {
+    transition: all .5s;
+    transform: scale(1.05);
+}
+
 li {
     list-style: none;
 }
+
+@media screen  and (max-width:variaveis.$tablet){
+    section {
+        .container {
+            .imagens {
+                grid-template-columns: repeat(2,48%);
+                .imagens-random {
+                    max-height: 200px;
+                }
+            }
+            
+        }
+    }
+}
+@media screen  and (max-width:variaveis.$mobile){
+    section {
+        .container {
+            .imagens {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,1 @@
+let imgs=document.querySelectorAll(".imagens-random");function ಠ_ಠ661(){imgs.forEach(e=>{e.addEventListener("mouseover",()=>{e.classList.add("hoverImg")}),e.addEventListener("mouseout",()=>{e.classList.remove("hoverImg"),console.log(e)})})}ಠ_ಠ661();
